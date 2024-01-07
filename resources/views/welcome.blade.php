@@ -52,6 +52,17 @@
                             <li class="mt-6 text-center text-xl text-gray-500 dark:text-gray-400"> 3) Envoyer le code sur github</li>
                         </ul>
                     </p>
+                    <p class="mt-6 text-center text-xl text-gray-500 dark:text-gray-400">
+                        Conditions de l'examen :
+                        <ul>
+                            <li class="mt-6 text-center text-xl text-gray-500 dark:text-gray-400"> 1) L'examen doit être réalisé seul</li>
+                            <li class="mt-6 text-center text-xl text-gray-500 dark:text-gray-400"> 2) Vous devez au minimum réussir 5 étapes et mettre le projet sur Github pour avoir 50%</li>
+                            <li class="mt-6 text-center text-xl text-gray-500 dark:text-gray-400"> 3) 
+                                Vous avez 4 * 50 min  pour réaliser l'examen
+                            </li>
+                        </ul>
+                    </p>
+
                 </div>
 
                 <div class="mt-16">

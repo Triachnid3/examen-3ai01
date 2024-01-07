@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    @dd('Où est dd? Il faut le supprimer ou le commenter!');
 
     <title>Laravel</title>
 
@@ -865,15 +864,17 @@
             <div class="mt-16">
                 <h1
                     class="text-center text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl sm:tracking-tight lg:text-6xl">
-                    {{ $eltit }} </h1>
+                    {{ $title }} </h1>
 
                 <p class="mt-6 text-center text-xl text-gray-500 dark:text-gray-400">
-                    {{ $descrpition }}
+                    {{ $description }}
                 </p>
                 <p class="mt-6 text-center text-xl text-gray-500 dark:text-gray-400">
                     Etape suivante : {{ $next }}
                 </p>
+               
             </div>
+
 
             <div class="mt-16">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
