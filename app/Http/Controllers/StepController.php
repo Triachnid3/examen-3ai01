@@ -74,7 +74,7 @@ class StepController extends Controller
     public function step7()
     {
         $title = "Nous sommes à l'étape 7";
-        $description = "Alogorithme de tri, vous devez tri le tableau avec des nombres et afficher le résultat";
+        $description = "Algorithme de tri, vous devez trier le tableau avec des nombres et afficher le résultat";
         $numbers = [];
         for ($i = 0; $i < 15; $i++) {
             $numbers[] = rand(-100, 1000);
@@ -99,7 +99,7 @@ class StepController extends Controller
     {
         $title = "Nous sommes à l'étape 9";
         $result = 0;
-        $description = "Vous devez écrire du code pour réaliser la fibre de fibonacci quand vous affichier le nombre 63245986 vous devez attribuer cette valeur à la variable $result et le bouton doit s'afficher";
+        $description = "Vous devez écrire du code pour réaliser la suite de fibonacci quand vous affichez le nombre 63245986 vous devez attribuer cette valeur à la variable $result et le bouton doit s'afficher";
         $next = "step10";
         $button = "Étape suivante";
 

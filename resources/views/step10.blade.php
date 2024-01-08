@@ -42,7 +42,7 @@
                     <h1 class="text-center text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl sm:tracking-tight lg:text-6xl">{{$title}} </h1>
 
                     <p class="mt-6 text-center text-xl text-gray-500 dark:text-gray-400">
-                        {{$description}}}
+                        {{$description}}
                     </p>
                 </div>
 
