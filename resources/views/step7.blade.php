@@ -872,16 +872,47 @@
                 <p class="mt-6 text-center text-xl text-gray-500 dark:text-gray-400">
                     Etape suivante : {{ $next }}
                 </p>
-                <p>
+                <p class="text-gray-500 dark:text-gray-400">
                     Voici les nombres aléatoires : @foreach ($numbers as $number)
                         {{ $number }} ,
                     @endforeach
                 </p>
                 <br />
-                <p>
+                <p class="text-gray-500 dark:text-gray-400">
                     !!! ici tu dois affdicher dans l'order croissant les nombres aléatoires !!!
-                </p>
+                    <br />
+                    <span>
+                        Méthode boucle :
+                    </span>
+                    <br />
 
+                    @for ($i = 0; $i < count($numbers); $i++)
+                        @for ($j = $i + 1; $j < count($numbers); $j++)
+                            @if ($numbers[$i] > $numbers[$j])
+                                <?php $temp = $numbers[$i]; ?>
+                                <?php $numbers[$i] = $numbers[$j]; ?>
+                                <?php $numbers[$j] = $temp; ?>
+                            @endif
+                        @endfor
+                    @endfor
+                    @foreach ($numbers as $number)
+                        {{ $number }} ,
+                    @endforeach
+                    <br />
+                    <span>
+                        Méthode fonction collect() :
+                    </span>
+                    <br />
+                    @php
+                        $collection = collect($numbers);
+
+                        $collection = $collection->sort();
+
+                        foreach ($collection as $number) {
+                            echo $number . ' , ';
+                        }
+                    @endphp
+                </p>
             </div>
 
 

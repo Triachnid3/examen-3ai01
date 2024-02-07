@@ -20,15 +20,16 @@ class StepController extends Controller
         $title = "Nous sommes à l'étape 2";
         $description = "Si je ne me trompe pas, vous avez réussi la première étape ! Maintenant, je comprends pas pourquoi le bouton ne fonctionne pas pour passer à l'étape suivante...";
         $next = "step3";
+        $button = "Étape suivante";
 
 
-        return view('step2', compact('title', 'description', 'next'));
+        return view('step2', compact('title', 'description', 'next', 'button'));
     }
     public function step3()
     {
         $title = "Nous sommes à l'étape 3";
         $description = "Top, on continue !";
-        $next = "step3";
+        $next = "step4";
         $button = "Étape suivante";
 
         return view('step3', compact('title', 'description', 'next', 'button'));
@@ -44,9 +45,6 @@ class StepController extends Controller
         $url = "https://rickandmortyapi.com/api/character";
         $data = json_decode(file_get_contents($url), true);
         $characters = $data['results'];
-
-
-
 
         return view('step4', compact('title', 'description', 'next', 'button', 'characters'));
     }
@@ -69,7 +67,7 @@ class StepController extends Controller
         $next = "step7";
         $button = "Étape suivante";
 
-        view('step6', compact('title', 'description', 'next', 'button'));
+        return view('step6', compact('title', 'description', 'next', 'button'));
     }
     public function step7()
     {

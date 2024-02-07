@@ -10,7 +10,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Styles -->
     <style>
         /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */
@@ -830,9 +830,9 @@
     </style>
 </head>
 
-<body class="antialiased">
+<body class="antialiased bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900  ">
     <div
-        class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+        class="h-screen relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
         @if (Route::has('login'))
             <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                 @auth
@@ -851,7 +851,7 @@
             </div>
         @endif
 
-        <div class="max-w-7xl mx-auto p-6 lg:p-8">
+        <div class="h-screen mx-auto p-6 lg:p-8">
             <div class="flex justify-center">
                 <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg"
                     class="h-16 w-auto bg-gray-100 dark:bg-gray-900">
@@ -872,10 +872,42 @@
                 <p class="mt-6 text-center text-xl text-gray-500 dark:text-gray-400">
                     Etape suivante : {{ $next }}
                 </p>
-               
+
             </div>
-            <div class="mt-16">
-                @dd($characters))
+            <div class="mt-16 grid grid-cols-3 md:grid-cols-3 gap-4">
+                @foreach ($characters as $character)
+                    <div class="max-w-sm shadow-lg bg-white rounded-lg p-4">
+                        <img class="w-full rounded-full mx-auto my-4" src="{{ $character['image'] }}"
+                            alt="Sunset in the mountains">
+                        <div class="px-6 py-4">
+                            <div class="font-bold text-xl mb-2">{{ $character['name'] }}</div>
+                            <ul>
+                                <li>
+                                    <strong>Genre : </strong> {{ $character['gender'] }}
+                                </li>
+                                <li>
+                                    <strong>Espèce : </strong> {{ $character['species'] }}
+                                </li>
+                                <li>
+                                    <strong>Origine : </strong> {{ $character['origin']['name'] }}
+                                </li>
+                                <li>
+                                    <strong>Localisation : </strong> {{ $character['location']['name'] }}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="px-6 pt-4 pb-2">
+                            <span
+                                class="inline-block rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 {{ $character['status'] === 'Alive' ? 'bg-green-200' : 'bg-red-200' }}">{{ $character['status'] }}</span>
+                            <span
+                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                                Apparitions : {{ count($character['episode']) }}
+                            </span>
+                        </div>
+                    </div>
+                @endforeach
+
+                {{-- @dd($characters) --}}
             </div>
 
             <div class="mt-16">

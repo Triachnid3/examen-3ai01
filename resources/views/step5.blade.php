@@ -862,15 +862,26 @@
 
             </div>
             <div class="mt-16">
+                {{-- 2 méthodes pour régler le souci, la première : Modifier les variables dans le StepController pour avoir : 
+                    $title = "Nous sommes à l'étape 5";
+                    $description = "Vous avez un problème de type";
+                    $next = "step6";
+                    $button = "Étape suivante";
+            
+                    return view('step5', compact('title', 'description', 'next', 'button'));
+
+                    La seconde est d'utiliser $array[] et le nom de la variable comme ci-dessous :
+                --}}
+
                 <h1
                     class="text-center text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl sm:tracking-tight lg:text-6xl">
-                    {{ $title }} </h1>
+                    {{ $array['title'] }} </h1>
 
                 <p class="mt-6 text-center text-xl text-gray-500 dark:text-gray-400">
-                    {{ $description }}
+                    {{ $array['description'] }}
                 </p>
                 <p class="mt-6 text-center text-xl text-gray-500 dark:text-gray-400">
-                    Etape suivante : {{ $next }}
+                    Etape suivante : {{ $array['next'] }}
                 </p>
                
             </div>
@@ -880,12 +891,12 @@
 
             <div class="mt-16">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                    <a href="{{ route($next) }}"
+                    <a href="{{ route($array['next']) }}"
                         class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
                         <div>
 
 
-                            <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">{{ $button }}
+                            <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">{{ $array['button'] }}
                             </h2>
 
                             <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
